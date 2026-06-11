@@ -6,7 +6,6 @@
 <title>Bolão Artilheiros — Copa 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #f5f4f0;
@@ -14,7 +13,6 @@
     min-height: 100vh;
     padding: 0 0 40px;
   }
-
   .top-bar {
     background: #1a1a18;
     color: #fff;
@@ -31,167 +29,42 @@
     justify-content: space-between;
     gap: 12px;
   }
-  .top-title {
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-  .top-sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 3px;
-  }
+  .top-title { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+  .top-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 3px; }
   .live-dot {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    margin-top: 3px;
-    white-space: nowrap;
+    display: flex; align-items: center; gap: 5px;
+    font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 3px; white-space: nowrap;
   }
   .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #4ade80;
+    width: 7px; height: 7px; border-radius: 50%; background: #4ade80;
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 16px 14px 0;
-  }
-
-  .ranking-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .container { max-width: 600px; margin: 0 auto; padding: 16px 14px 0; }
+  .ranking-list { display: flex; flex-direction: column; gap: 8px; }
   .card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background: #fff; border-radius: 14px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
     border: 1px solid rgba(0,0,0,0.06);
   }
-  .card.gold {
-    background: #fffbf0;
-    border: 1.5px solid #f0b429;
-  }
-  .card.silver {
-    background: #fafafa;
-    border: 1px solid #c8c8c8;
-  }
-  .card.bronze {
-    background: #fefaf7;
-    border: 1px solid #d4a97a;
-  }
-
-  .pos {
-    font-size: 20px;
-    min-width: 30px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-  .pos-num {
-    font-size: 15px;
-    font-weight: 600;
-    color: #888;
-    min-width: 30px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  .avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-
-  .info { flex: 1; min-width: 0; }
-  .name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a1a18;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .players {
-    margin-top: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .player-tag {
-    font-size: 12px;
-    background: #f0efeb;
-    border-radius: 6px;
-    padding: 2px 8px;
-    color: #555;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .player-tag .g {
-    font-weight: 700;
-    color: #1a1a18;
-  }
-
-  .score-block {
-    text-align: right;
-    flex-shrink: 0;
-  }
-  .score {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    color: #1a1a18;
-  }
+  .card.gold  { background: #fffbf0; border: 1.5px solid #f0b429; }
+  .card.silver{ background: #fafafa; border: 1px solid #c8c8c8; }
+  .card.bronze{ background: #fefaf7; border: 1px solid #d4a97a; }
+  .pos     { font-size: 20px; min-width: 30px; text-align: center; flex-shrink: 0; }
+  .pos-num { font-size: 15px; font-weight: 600; color: #888; min-width: 30px; text-align: center; flex-shrink: 0; }
+  .avatar  { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+  .info    { flex: 1; min-width: 0; }
+  .name    { font-size: 15px; font-weight: 600; color: #1a1a18; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .players { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .player-tag { font-size: 12px; background: #f0efeb; border-radius: 6px; padding: 2px 8px; color: #555; display: inline-flex; align-items: center; gap: 4px; }
+  .player-tag .g { font-weight: 700; color: #1a1a18; }
+  .score-block { text-align: right; flex-shrink: 0; }
+  .score { font-size: 26px; font-weight: 700; line-height: 1; color: #1a1a18; }
   .card.gold .score { color: #b45309; }
-  .score-label {
-    font-size: 11px;
-    color: #aaa;
-    margin-top: 2px;
-  }
-
-  .updated-bar {
-    max-width: 600px;
-    margin: 14px auto 0;
-    padding: 0 14px;
-    font-size: 12px;
-    color: #aaa;
-    text-align: right;
-  }
-
-  .loading {
-    text-align: center;
-    padding: 60px 20px;
-    color: #aaa;
-    font-size: 15px;
-  }
-
-  .error {
-    text-align: center;
-    padding: 40px 20px;
-    color: #c0392b;
-    font-size: 14px;
-  }
+  .score-label { font-size: 11px; color: #aaa; margin-top: 2px; }
+  .updated-bar { max-width: 600px; margin: 14px auto 0; padding: 0 14px; font-size: 12px; color: #aaa; text-align: right; }
+  .loading { text-align: center; padding: 60px 20px; color: #aaa; font-size: 15px; }
+  .error   { text-align: center; padding: 40px 20px; color: #c0392b; font-size: 14px; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -211,11 +84,12 @@
     <div class="loading">Carregando ranking...</div>
   </div>
 </div>
-
 <div class="updated-bar" id="updated-bar"></div>
 
 <script>
-const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTkvHHU-xqp8l41KyUbr9zvGld6oTl1glRQJyeD06mi4BznHARHgwe7OreC4BdqsfUIHrq6j-vWrFyW/pub?output=csv&cachebust=';
+const SHEET_ID = '2PACX-1vTkvHHU-xqp8l41KyUbr9zvGld6oTl1glRQJyeD06mi4BznHARHgwe7OreC4BdqsfUIHrq6j-vWrFyW';
+const DIRECT  = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv`;
+const PROXY   = `https://api.allorigins.win/raw?url=${encodeURIComponent(DIRECT)}`;
 
 const AVATAR_COLORS = [
   ['#dbeafe','#1e40af'],['#dcfce7','#166534'],['#fef3c7','#92400e'],
@@ -235,9 +109,9 @@ function parseCSV(text) {
   lines.forEach(line => {
     const cols = line.split(',');
     if (cols.length < 3) return;
-    const player = cols[0].trim();
+    const player      = cols[0].trim();
     const participant = cols[1].trim();
-    const goals = parseInt(cols[2].trim()) || 0;
+    const goals       = parseInt(cols[2].trim()) || 0;
     if (!map[participant]) map[participant] = { players: [], totalGoals: 0 };
     map[participant].players.push({ name: player, goals });
     map[participant].totalGoals += goals;
@@ -246,23 +120,9 @@ function parseCSV(text) {
 }
 
 function buildRanking(map) {
-  const entries = Object.entries(map).map(([name, data]) => ({ name, ...data }));
-  entries.sort((a, b) => b.totalGoals - a.totalGoals || a.name.localeCompare(b.name));
-  return entries;
-}
-
-function medalOrNum(rank) {
-  if (rank === 1) return '<span class="pos">🥇</span>';
-  if (rank === 2) return '<span class="pos">🥈</span>';
-  if (rank === 3) return '<span class="pos">🥉</span>';
-  return `<span class="pos-num">${rank}º</span>`;
-}
-
-function cardCls(rank) {
-  if (rank === 1) return 'card gold';
-  if (rank === 2) return 'card silver';
-  if (rank === 3) return 'card bronze';
-  return 'card';
+  return Object.entries(map)
+    .map(([name, data]) => ({ name, ...data }))
+    .sort((a, b) => b.totalGoals - a.totalGoals || a.name.localeCompare(b.name));
 }
 
 function render(ranking) {
@@ -271,13 +131,18 @@ function render(ranking) {
 
   list.innerHTML = ranking.map((p, i) => {
     const rank = i + 1;
+    const cls  = rank===1?'card gold': rank===2?'card silver': rank===3?'card bronze':'card';
+    const medal= rank===1?'🥇': rank===2?'🥈': rank===3?'🥉': null;
+    const posHtml = medal
+      ? `<span class="pos">${medal}</span>`
+      : `<span class="pos-num">${rank}º</span>`;
     const [bg, fg] = AVATAR_COLORS[i % AVATAR_COLORS.length];
     const tags = p.players.map(pl =>
       `<span class="player-tag">${pl.name} <span class="g">${pl.goals}</span></span>`
     ).join('');
     return `
-      <div class="${cardCls(rank)}">
-        ${medalOrNum(rank)}
+      <div class="${cls}">
+        ${posHtml}
         <div class="avatar" style="background:${bg};color:${fg}">${initials(p.name)}</div>
         <div class="info">
           <div class="name">${p.name}</div>
@@ -290,22 +155,31 @@ function render(ranking) {
       </div>`;
   }).join('');
 
-  const now = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  const now = new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
   document.getElementById('updated-bar').textContent = `Atualizado às ${now}`;
 }
 
-function fetchData() {
-  fetch(CSV_URL + Date.now())
-    .then(r => r.text())
-    .then(text => {
-      const map = parseCSV(text);
-      const ranking = buildRanking(map);
-      render(ranking);
-    })
-    .catch(() => {
-      document.getElementById('ranking-list').innerHTML =
-        '<div class="error">Erro ao carregar dados. Tente recarregar a página.</div>';
-    });
+function showError(msg) {
+  document.getElementById('ranking-list').innerHTML = `<div class="error">${msg}</div>`;
+}
+
+async function fetchData() {
+  try {
+    let res = await fetch(DIRECT + '&t=' + Date.now());
+    if (!res.ok) throw new Error('direct failed');
+    const text = await res.text();
+    if (!text.includes(',')) throw new Error('bad response');
+    render(buildRanking(parseCSV(text)));
+  } catch(e) {
+    try {
+      let res = await fetch(PROXY + '&t=' + Date.now());
+      if (!res.ok) throw new Error('proxy failed');
+      const text = await res.text();
+      render(buildRanking(parseCSV(text)));
+    } catch(e2) {
+      showError('Não foi possível carregar os dados.<br>Verifique sua conexão e recarregue a página.');
+    }
+  }
 }
 
 fetchData();
